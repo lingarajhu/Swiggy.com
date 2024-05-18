@@ -3,6 +3,7 @@ import AddedItems from "./AddedItems";
 import { CART_IMG } from "../utils/constants";
 import { clearCart } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -19,7 +20,15 @@ const Cart = () => {
         Your Cart is empty
       </h1>
       <img src={CART_IMG} />
-      <h1 className="font-bold text-2xl">GO TO HOME TO ADD ITEMS</h1>
+      <h1 className="font-bold text-2xl">
+        GO TO{" "}
+        {
+          <Link className="text-orange-500 hover:underline ease-in-out" to="/">
+            HOME
+          </Link>
+        }{" "}
+        TO ADD ITEMS
+      </h1>
     </div>
   ) : (
     <div className="w-5/12 p-3 border rounded-md m-auto">
