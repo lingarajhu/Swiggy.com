@@ -38,6 +38,9 @@ class UserInfo extends React.Component {
       <div className="user-card">
         <h1>Name: {name}</h1>
         <h2>Location: {location}</h2>
+        <p>DEFAULK: {this.props.name}</p>
+        <h1>Child count: {this.props.count}</h1>
+        <button onClick={() => this.props.increment()}>Increment</button>
         <img src={avatar_url} />
       </div>
     );
